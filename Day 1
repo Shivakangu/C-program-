@@ -1,1 +1,141 @@
 
+1.Factorial of a number with /without recursion
+
+#include <stdio.h>
+
+int main()
+{
+    int i,fact=1,num;
+    scanf("%d",&num);
+    for(i=1;i<=num;i++)
+    {
+        fact*=i;
+    }
+printf("the factorial is %d",fact);
+    return 0;
+}
+
+2.Fibonacci series until limit
+
+#include <stdio.h>
+
+int main()
+{
+    int limit,t1=0,t2=1,t3,i;
+    scanf("%d",&limit);
+    printf("%d\t%d",t1,t2);
+    for(i=1;i<=limit-2;i++)
+    {
+        t3=t1+t2;
+        printf("\t%d",t3);
+        t1=t2;
+        t2=t3;
+    }
+
+    return 0;
+}
+
+3.Nth digit in Fibonacci series
+
+#include <stdio.h>
+
+int main()
+{
+    int limit,t1=0,t2=1,t3,i;
+    scanf("%d",&limit);
+    if(limit==0){
+        printf("%d",t1);
+    }
+    else if(limit==1){
+        printf("%d",t2);
+    }
+    else
+    for(i=1;i<=limit-2;i++)
+    {
+        t3=t1+t2;
+        t1=t2;
+        t2=t3;
+    }
+     printf("%d",t3);
+
+    return 0;
+}
+
+4.Sum of Fibonacci series
+
+#include <stdio.h>
+
+int main()
+{
+    int limit,t1=0,t2=1,t3,i,t4=0;
+    scanf("%d",&limit);
+    for(i=0;i<=limit-2;i++)
+    {
+        t3=t1+t2;
+        t4+=t2;
+        t1=t2;
+        t2=t3;
+        
+        
+    }
+    printf("%d",t4);
+    return 0;
+}
+
+5.Armstrong
+
+#include <stdio.h>
+#include<math.h>
+int main()
+{
+    int num,num1,count=0,digit,result=0,num2;
+    scanf("%d",&num);
+    num1=num;
+    num2=num;
+    while(num!=0)
+    {
+        num/=10;
+        count+=1;
+    }
+    printf("cod=%d\n",count);
+    while(num1!=0)
+    {
+        digit=num1%10;
+        result+= pow(digit,count);
+        num1/=10;
+        
+    }
+    if(result==num2){
+    printf("%d is amstrong number",num2);
+    }
+    else{
+        printf("%d is not an amstrong number",num2);
+    }
+    return 0;
+}
+
+6.Palindrome
+
+#include <stdio.h>
+
+void main()
+{
+    int num,rem=0,digit,num1;
+    scanf("%d",&num);
+    num1=num;
+while(num!=0)
+{
+    digit=num%10;
+    rem*=10;
+    rem+=digit;
+    num/=10;
+}
+if(num1==rem)
+{
+    printf("pallendrome");
+}
+else
+{
+    printf("not a pallendrome");
+}
+}
