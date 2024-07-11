@@ -1,1 +1,255 @@
+1) N value of integer and reverse 
 
+#include <stdio.h>
+
+int main()
+{
+     int n,i;
+    scanf("%d",&n);
+    int a[n];
+    for(i=0;i<n;i++)
+    {
+        scanf("%d",&a[i]);
+    }
+    for(i=n-1;i>=0;i--)
+    {
+        printf("%d\t",a[i]);
+    }
+    return 0;
+}
+
+2) Count number of 0's & 1's
+
+#include <stdio.h>
+
+int main()
+{
+    int n,i,count,count1;
+    scanf("%d",&n);
+    int a[n];
+    printf("Enter only 0's and 1's:");
+    for(i=0;i<n;i++)
+    {
+        scanf("%d",&a[i]);
+    }
+    for(i=0;i<n;i++)
+    {
+        if(a[i]==0)
+        {
+            count++;
+        }
+        else if(a[i]==1)
+        {
+            count1++;
+        }
+    }
+    printf("There are %d numbers of 0's",count);
+    printf("\nThere are %d numbers of 1's",count1);
+
+    return 0;
+}
+
+3) Count of element & lesser than key element
+
+#include <stdio.h>
+
+int main()
+{
+    int n,i,count=0,num,count1;
+    scanf("%d",&n);
+    printf("Enter the key element:");
+    scanf("%d",&num);
+    int a[n];
+    for(i=0;i<n;i++)
+    {
+        scanf("%d",&a[i]);
+        count1++;
+    }
+    printf("\nThe numbers lesser than %d are",num);
+    for(i=0;i<n;i++)
+    {
+        if(a[i]<num)
+        {
+            printf("\n%d",a[i]);
+        }
+        
+    }
+    printf("\nNumber of elements in array are %d",count1);
+    
+
+    return 0;
+}
+
+ 
+4) Repeated elements in array
+
+#include <stdio.h>
+
+int main()
+{
+    int n,i,j;
+    scanf("%d",&n);
+    int a[n];
+    for(i=0;i<n;i++)
+    {
+        scanf("%d",&a[i]);
+    }
+    for(i=0;i<n;i++)
+    {
+        for(j=i+1;j<n;j++)
+        {
+            if(a[i]==a[j])
+            {
+                printf("%d\n",a[j]);
+            }
+        }
+    }
+
+    return 0;
+}
+
+
+5) Search element and index in array
+
+#include <stdio.h>
+
+int main()
+{
+    int n,i,flag=0,key;
+    scanf("%d",&n);
+    int a[n];
+    printf("Enter the element to be searched:");
+    scanf("%d",&key);
+    for(i=0;i<n;i++)
+    {
+        scanf("%d",&a[i]);
+    }
+    for(i=0;i<n;i++)
+    {
+        if(a[i]==key)
+        {
+            printf("Index of the element is %d",i);
+            flag=1;
+        }
+    }
+    if(flag==0)
+    {
+        printf("\n-1");
+    }
+
+    return 0;
+}
+
+6) Segrigate 0's at left and 1's at right
+
+#include <stdio.h>
+
+int main()
+{
+    int n,i,j,temp;
+    scanf("%d",&n);
+    int a[n];
+    for(i=0;i<n;i++)
+    {
+        scanf("%d",&a[i]);
+    }
+    printf("Arranged order of the array:")
+    for(i=0;i<n;i++)
+    {
+        for(j=i+1;j<n;j++)
+        {
+            if(a[i]>a[j])
+            {
+                temp=a[i];
+                a[i]=a[j];
+                a[j]=temp;
+            }
+        }
+    }
+    for(i=0;i<n;i++)
+    {
+        printf("%d",a[i]);
+    }
+
+    return 0;
+}
+
+7) Replace  element at array with sum of its right elements
+
+#include <stdio.h>
+
+int main()
+{
+    int n,i,j,count=0;
+    scanf("%d",&n);
+    int a[n];
+    for(i=0;i<n;i++)
+    {
+        scanf("%d",&a[i]);
+    }
+    for(i=0;i<n;i++)
+    {
+        for(j=i+1;j<n;j++)
+        {
+            count+=a[j];
+        }
+        a[i]=count;
+        count=0;
+    }
+    printf("Sum of right elements arranged:\n");
+    for(i=0;i<n;i++)
+    {
+        printf("%d\t",a[i]);
+    }
+
+    return 0;
+}
+
+
+8) Reverse of the array
+
+
+#include <stdio.h>
+
+int main()
+{
+     int n,i;
+    scanf("%d",&n);
+    int a[n];
+    for(i=0;i<n;i++)
+    {
+        scanf("%d",&a[i]);
+    }
+    for(i=n-1;i>=0;i--)
+    {
+        printf("%d\t",a[i]);
+    }
+    return 0;
+}
+
+9) Insert the value at given position
+#include <stdio.h>
+
+int main()
+{
+   int n,i,pos,j,val,a[100];
+   scanf("%d",&n);
+   for(i=0;i<n;i++){
+       scanf("%d",&a[i]);
+   }
+   printf("position:");
+   scanf("%d",&pos);
+   printf("value:");
+   scanf("%d",&val);
+   for(i=n;i>=pos;i--){
+       for(j=i+1;j>i;j--){
+           a[j]=a[i];
+       }
+   }
+      a[pos]=val; 
+      n+=1;
+   for(i=0;i<n;i++){
+       printf("%d\t",a[i]);
+   }
+       return 0;
+}
